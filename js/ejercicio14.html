@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 14</title>
+</head>
+
+<body>
+
+    <script>
+        const duplicar = (arreglo) => {
+            return arreglo.map((numero) => numero * 2);
+        };
+
+        const cantidad = parseInt(prompt("¿Cuántos números desea ingresar?"));
+
+        const numeros = [];
+
+        for (let i = 0; i < cantidad; i++) {
+            numeros.push(parseInt(prompt(`Ingrese el número ${i + 1}:`)));
+        }
+
+        const duplicados = duplicar(numeros);
+
+        document.write(`
+    <h2>Array original: ${numeros}</h2>
+    <h2>Array duplicado: ${duplicados}</h2>`);
+    </script>
+
+</body>
+
+</html>
