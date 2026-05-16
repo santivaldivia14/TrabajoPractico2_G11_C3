@@ -6,7 +6,7 @@ export const paisesCapitales = {
   Peru: "Lima",
   Uruguay: "Montevideo",
 };
- 
+
 export const sincronizarCapital = (selectPais, selectCapital) => {
   const capital = paisesCapitales[selectPais.value];
   selectCapital.value = capital;
