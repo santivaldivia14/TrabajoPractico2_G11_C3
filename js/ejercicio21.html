@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Ejercicio 21 - Países y Capitales</title>
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #eaf0fb; margin: 0; }
-    .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); min-width: 320px; }
-    h2 { margin-top: 0; color: #2c3e50; }
-    label { display: block; margin-bottom: 0.3rem; color: #555; }
-    select { width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1.2rem; font-size: 1rem; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Ejercicio 21</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        select {
+            display: block;
+            margin-bottom: 20px;
+            padding: 8px;
+            width: 250px;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="card">
-    <h2>Países y Capitales de América</h2>
-    <label for="pais">País</label>
-    <select id="pais"></select>
-    <label for="capital">Capital</label>
-    <select id="capital"></select>
-  </div>
-  <script type="module" src="js/ejercicio21.js"></script>
+
+    <select id="pais">
+        <option value="Argentina">Argentina</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Chile">Chile</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Perú">Perú</option>
+    </select>
+
+    <select id="capital">
+        <option>Buenos Aires</option>
+        <option>Brasilia</option>
+        <option>Santiago</option>
+        <option>Montevideo</option>
+        <option>Asunción</option>
+        <option>Lima</option>
+    </select>
+
+    <p id="mensaje"></p>
+
+    <script type="module" src="./ejercicio21.js"></script>
+
 </body>
+
 </html>
