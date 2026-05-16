@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 24 - Radio Buttons</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400&display=swap');
+ 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg: #f0ebe3;
+      --surface: #ffffff;
+      --accent: #5c3d2e;
+      --highlight: #e07a5f;
+      --text: #2c2c2c;
+      --muted: #9b8b7e;
+    }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+ 
+    .card {
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(92,61,46,0.12);
+    }
+ 
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+ 
+    .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+ 
+    .options { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
+ 
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      background: var(--bg);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+ 
+    .option:has(input:checked) {
+      border-color: var(--highlight);
+      background: #fff5f3;
+    }
+ 
+    .option input[type="radio"] { display: none; }
+ 
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2.5px solid var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+ 
+    .option:has(input:checked) .dot {
+      border-color: var(--highlight);
+      background: var(--highlight);
+    }
+ 
+    .dot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+ 
+    .option:has(input:checked) .dot::after { opacity: 1; }
+ 
+    .option-label {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+ 
+    .badge {
+      margin-left: auto;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      background: rgba(224,122,95,0.15);
+      color: var(--highlight);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+ 
+    .option:has(input:checked) .badge { opacity: 1; }
+ 
+    #resultado {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Tu lenguaje favorito</h1>
+    <p class="subtitle">Seleccioná una opción y ve el resultado en tiempo real</p>
+    <div class="options">
+      <label class="option">
+        <input type="radio" name="lenguaje" value="JavaScript">
+        <span class="dot"></span>
+        <span class="option-label">JavaScript</span>
+        <span class="badge">Seleccionado</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="lenguaje" value="Python">
+        <span class="dot"></span>
+        <span class="option-label">Python</span>
+        <span class="badge">Seleccionado</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="lenguaje" value="Java">
+        <span class="dot"></span>
+        <span class="option-label">Java</span>
+        <span class="badge">Seleccionado</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="lenguaje" value="C#">
+        <span class="dot"></span>
+        <span class="option-label">C#</span>
+        <span class="badge">Seleccionado</span>
+      </label>
+      <label class="option">
+        <input type="radio" name="lenguaje" value="TypeScript">
+        <span class="dot"></span>
+        <span class="option-label">TypeScript</span>
+        <span class="badge">Seleccionado</span>
+      </label>
+    </div>
+    <div id="resultado">Seleccioná un lenguaje para ver el resultado</div>
+  </div>
+  <script type="module" src="js/ejercicio24.js"></script>
+</body>
+</html>
